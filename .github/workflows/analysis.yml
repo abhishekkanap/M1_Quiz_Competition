@@ -31,6 +31,6 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: analyse
-        run: cppcheck --enable=all 2_Implementation
+        run: cppcheck --enable=all 3_Implementation
           echo Add other actions to build,
           echo test, and deploy your project.
