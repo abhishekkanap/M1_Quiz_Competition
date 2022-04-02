@@ -27,5 +27,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: build
-        run: make -C 2_Implementation
+        run: make -C 3_Implementation
 
