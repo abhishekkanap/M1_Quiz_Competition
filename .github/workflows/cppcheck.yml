@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Analysis
+name: STATIC ANALYSIS
 
 # Controls when the workflow will run
 on:
@@ -23,14 +23,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Install
-        run: sudo apt-get install cppcheck
+      - name: install
+        run: sudo apt-get install cppcheck 
 
       # Runs a set of commands using the runners shell
-      - name: analyse
+      - name: STATIC ANALYSIS
         run: cppcheck --enable=all 3_Implementation
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          
