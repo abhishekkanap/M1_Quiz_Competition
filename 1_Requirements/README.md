@@ -3,6 +3,10 @@
 * Captures Quiz Competition Questions of the project through - General Knowledge Questions and Basic Electrical Engineering Quiz Questions
 * Tools: MS word
 
+
+<br>
+
+
 # Introduction:
 <br>
 
@@ -32,6 +36,8 @@ The Key features of quiz are:
 1. C language
 2. Visual studio Code
 <br>
+
+
 
 ## SWOT Analysis:
 
@@ -69,3 +75,24 @@ The project is mainly about students to get more knowledge on Electrical field.
 How
 --------------------------------------------------------------------------------
 The user can take the quiz by entering his name.
+
+<br>
+
+## High Level Requirements
+<br>
+
+| ID | Description | 
+|----|----------------------|
+|HP01|user interface| 
+
+<br>
+<br>
+
+## Low Level Requirements
+<br>
+
+|ID| Description |
+|----|------------------------|
+|LP01| user view all the rules of the game| 
+|LP02| user has an option to exit| 
+|LP03| user can view the score|
