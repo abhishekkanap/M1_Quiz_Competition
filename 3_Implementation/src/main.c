@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<ctype.h>
 #include<stdlib.h>
+#include<curses.h>
 #include<string.h>
 
 #include"QuizFunction.h"
