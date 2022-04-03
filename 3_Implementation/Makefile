@@ -1,32 +1,69 @@
-# Name of the project
-PROJECT_NAME = Quiz_Competition
+########################################################################
+####################### Makefile Template ##############################
+########################################################################
 
-#Doxyfile folder
-DOC = documentation
+# Compiler settings - Can be customized.
+CC = gcc
+CXXFLAGS = -std=c11 -Wall
+LDFLAGS = 
 
-#All source code files
-SRC = src/main.c
+# Makefile settings - Can be customized.
+APPNAME = Quiz_Competition
+EXT = .c
+SRCDIR = src
+OBJDIR = obj
 
-#All test source files
-TEST_SRC = src/main.c\
-test/test_quiz_competition.c\
-unity/unity.c
+############## Do not change anything from here downwards! #############
+SRC = $(wildcard $(SRCDIR)/*$(EXT))
+OBJ = $(SRC:$(SRCDIR)/%$(EXT)=$(OBJDIR)/%.o)
+DEP = $(OBJ:$(OBJDIR)/%.o=%.d)
+# UNIX-based OS variables & settings
+RM = rm
+DELOBJ = $(OBJ)
+# Windows OS variables & settings
+DEL = del
+EXE = .exe
+WDELOBJ = $(SRC:$(SRCDIR)/%$(EXT)=$(OBJDIR)\\%.o)
 
-TEST_OUTPUT = Test_a.out
+########################################################################
+####################### Targets beginning here #########################
+########################################################################
 
-#All include folders with header files
-INC = -Iinc\
--Iunity\
+all: $(APPNAME)
 
-#Project Output Name
-PROJECT_OUTPUT = quiz.out
+# Builds the app
+$(APPNAME): $(OBJ)
+	$(CC) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
-#Document files
-DOCUMENTATION_OUTPUT = documentation/html
+# Creates the dependecy rules
+%.d: $(SRCDIR)/%$(EXT)
+	@$(CPP) $(CFLAGS) $< -MM -MT $(@:%.d=$(OBJDIR)/%.o) >$@
 
+# Includes all .h files
+-include $(DEP)
 
-Build:
-	gcc src/main.c test_quiz.c unity/unity.c -Iunity
+# Building rule for .o files and its .c/.cpp in combination with all .h
+$(OBJDIR)/%.o: $(SRCDIR)/%$(EXT)
+	$(CC) $(CXXFLAGS) -o $@ -c $<
 
-Run:
-	./a.out
+################### Cleaning rules for Unix-based OS ###################
+# Cleans complete project
+.PHONY: clean
+clean:
+	$(RM) $(DELOBJ) $(DEP) $(APPNAME)
+
+# Cleans only all files with the extension .d
+.PHONY: cleandep
+cleandep:
+	$(RM) $(DEP)
+
+#################### Cleaning rules for Windows OS #####################
+# Cleans complete project
+.PHONY: cleanw
+cleanw:
+	$(DEL) $(WDELOBJ) $(DEP) $(APPNAME)$(EXE)
+
+# Cleans only all files with the extension .d
+.PHONY: cleandepw
+cleandepw:
+	$(DEL) $(DEP)
