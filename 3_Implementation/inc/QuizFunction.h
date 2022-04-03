@@ -13,7 +13,7 @@
 #define QuizFunction
 
 #include<stdio.h>
-#include<conio.h>
+#include<curses.h>
 #include<stdlib.h>
 
 /**
