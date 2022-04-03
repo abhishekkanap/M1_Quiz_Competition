@@ -1,4 +1,4 @@
 # Document the code using Doxygen
 
 doc:
-	doxygen ./Quiz Competition_Doxyfile
+	doxygen ./Quiz_Competition_Doxyfile

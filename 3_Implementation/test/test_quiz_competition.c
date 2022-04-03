@@ -52,5 +52,5 @@ int main()
     RUN_TEST(test_edit_score);
 
     /* Close the Unity Test Framework */
-    return UNITY_END;
+    return UNITY_END();
 }

@@ -1,15 +1,19 @@
 /**
  * @file QuizFunction.h
- * @author Abhishek Kanap
- * @brief Header file for Quiz Competition with Various Function
- *
+ * @author Abhishek Kanap (abhishekkanap@gmail.com)
+ * @brief This is the source code which contains all the functions for the project
+ * @version 0.1
+ * @date 2022-03-21
+ * 
+ * @copyright Copyright (c) 2022
+ * 
  */
 
 #ifndef QuizFunction
 #define QuizFunction
 
 #include<stdio.h>
-//#include<conio.h>
+#include<conio.h>
 #include<stdlib.h>
 
 /**
